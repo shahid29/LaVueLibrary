@@ -1865,8 +1865,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "dashboard"
+  name: "dashboard",
+  mounted: function mounted() {
+    this.$store.dispatch("hitActionAuthor");
+    this.$store.dispatch("hitActionBook");
+    this.$store.dispatch("allCategory");
+    this.$store.dispatch("hitActionBorrow_date_return");
+    this.$store.dispatch("hitActionUser");
+  },
+  computed: {
+    printmYAuthor: function printmYAuthor() {
+      return this.$store.getters.author;
+    },
+    printMyBook: function printMyBook() {
+      return this.$store.getters.book;
+    },
+    printMyBorrowBook_date_return: function printMyBorrowBook_date_return() {
+      return this.$store.getters.borrow_date_return;
+    },
+    printCategoryInform: function printCategoryInform() {
+      return this.$store.getters.getMyCategory;
+    },
+    printMyUser: function printMyUser() {
+      return this.$store.getters.user;
+    }
+  }
 });
 
 /***/ }),
@@ -59376,61 +59464,210 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-3 col-6" }, [
+            _c(
+              "div",
+              { staticClass: "small-box bg-info" },
+              [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [_vm._v(_vm._s(_vm.printCategoryInform.length))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Category")])
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "small-box-footer",
+                    attrs: { to: "/category" }
+                  },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fa fa-arrow-circle-right" })
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-6" }, [
+            _c(
+              "div",
+              { staticClass: "small-box bg-success" },
+              [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [
+                    _vm._v(_vm._s(_vm.printmYAuthor.length)),
+                    _c("sup", { staticStyle: { "font-size": "20px" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Author")])
+                ]),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { staticClass: "small-box-footer", attrs: { to: "/author" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fa fa-arrow-circle-right" })
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-6" }, [
+            _c(
+              "div",
+              { staticClass: "small-box bg-warning" },
+              [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [_vm._v(_vm._s(_vm.printMyUser.length))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total User")])
+                ]),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { staticClass: "small-box-footer", attrs: { to: "/user" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fa fa-arrow-circle-right" })
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-6" }, [
+            _c(
+              "div",
+              { staticClass: "small-box bg-brown" },
+              [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [_vm._v(_vm._s(_vm.printMyBook.length))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Book")])
+                ]),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { staticClass: "small-box-footer", attrs: { to: "/books" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fa fa-arrow-circle-right" })
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-6" }, [
+            _c(
+              "div",
+              { staticClass: "small-box bg-danger" },
+              [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [
+                    _vm._v(_vm._s(_vm.printMyBorrowBook_date_return.length))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Borrow")])
+                ]),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "small-box-footer",
+                    attrs: { to: "/borrows" }
+                  },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fa fa-arrow-circle-right" })
+                  ]
+                )
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _c("h3", { staticClass: "card-title" }, [_vm._v("Title")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-tools" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-tool",
-                  attrs: {
-                    type: "button",
-                    "data-widget": "collapse",
-                    "data-toggle": "tooltip",
-                    title: "Collapse"
-                  }
-                },
-                [_c("i", { staticClass: "fa fa-minus" })]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-tool",
-                  attrs: {
-                    type: "button",
-                    "data-widget": "remove",
-                    "data-toggle": "tooltip",
-                    title: "Remove"
-                  }
-                },
-                [_c("i", { staticClass: "fa fa-times" })]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                Start creating your amazing application!\n            "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-footer" }, [
-            _vm._v("\n                Footer\n            ")
+    return _c("div", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("h1", { staticClass: "m-0 text-dark" }, [_vm._v("Dashboard")])
           ])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("i", { staticClass: "ion ion-bag" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("i", { staticClass: "ion ion-stats-bars" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("i", { staticClass: "ion ion-person-add" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("i", { staticClass: "ion ion-pie-graph" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon" }, [
+      _c("i", { staticClass: "ion ion-pie-graph" })
     ])
   }
 ]
@@ -78867,7 +79104,8 @@ __webpack_require__.r(__webpack_exports__);
     author: [],
     user: [],
     book: [],
-    borrow: []
+    borrow: [],
+    borrow_date_return: []
   },
   getters: {
     getMyCategory: function getMyCategory(state) {
@@ -78884,6 +79122,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     borrow: function borrow(state) {
       return state.borrow;
+    },
+    borrow_date_return: function borrow_date_return(state) {
+      return state.borrow_date_return;
     }
   },
   actions: {
@@ -78911,6 +79152,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/getMyborrow').then(function (response) {
         context.commit('BorrowMutation', response.data.result);
       });
+    },
+    hitActionBorrow_date_return: function hitActionBorrow_date_return(context) {
+      axios.get('/getMyborrow_date_return').then(function (response) {
+        context.commit('BorrowDateMutation', response.data.result);
+      });
     }
   },
   mutations: {
@@ -78928,120 +79174,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     BorrowMutation: function BorrowMutation(state, data) {
       return state.borrow = data;
+    },
+    BorrowDateMutation: function BorrowDateMutation(state, data) {
+      return state.borrow_date_return = data;
     }
-  } // getters: {
-  //     // and state within method and return it
-  //     getCategory(state){
-  //     return state.category
-  //     },
-  //     getPost(state){
-  //         return state.post
-  //     },
-  //
-  //     //frontend
-  //     getDataFromAction(state){
-  //         return state.blogPost
-  //     },
-  //     singlePostById(state){
-  //         return state.singlePost
-  //     },
-  //     sidebarCategory(state){
-  //         return state.sidebarCategory
-  //     },
-  //     latestPost(state){
-  //         return state.latestPost
-  //     },
-  //     getAllPostByCategoryId(state){
-  //         return state.blogPost
-  //     }
-  // },
-  // actions: {
-  //     allCategory(context){
-  //         axios.get('/getCategories')
-  //             .then((response)=>{
-  //               context.commit('showCategoryInMutation',response.data.showResult)
-  //             });
-  //
-  //     },
-  //
-  //     //Post
-  //     AllPost(context){
-  //         axios.get('/getPosts')
-  //             .then((response)=>{
-  //                 context.commit('showPostMutation',response.data.result)
-  //             });
-  //     },
-  //
-  //     //Frontend
-  //
-  //     allBlogPost(context){
-  //         axios.get('/getblogPost')
-  //             .then((response)=>{
-  //                 context.commit('showblogPostMutation',response.data.result)
-  //             })
-  //     },
-  //     getSinglePost(context,payload){
-  //         axios.get('/singlePost/'+payload)
-  //             .then((response)=>{
-  //                 context.commit('getSinglePostMutation',response.data.result)
-  //             })
-  //     },
-  //     categoryForSidebar(context){
-  //         axios.get('/categoryForSidebar')
-  //             .then((response)=>{
-  //                 context.commit('sidebarCategoryMutation',response.data.result)
-  //             })
-  //     },
-  //     latest(context){
-  //         axios.get('/latest')
-  //             .then((response)=>{
-  //                 context.commit('latestMutation',response.data.result)
-  //             })
-  //     },
-  //     allCategoryPost(context,payload){
-  //          axios.get('/allpostbyCategoryId/'+payload)
-  //              .then((response)=>{
-  //                  context.commit('allpostbyCategoryId_Mutation',response.data.result)
-  //              })
-  //     },
-  //     SearchPost(context,payload){
-  //         axios.get('/search?s='+payload)
-  //             .then((response)=>{
-  //                 context.commit('Search_Mutation',response.data.result)
-  //             })
-  //     }
-  // },
-  // mutations: {
-  //     showCategoryInMutation(state,data){
-  //         return state.category = data
-  //     },
-  //     showPostMutation(state,data){
-  //         return state.post = data
-  //     },
-  //
-  //
-  //     //frontend
-  //     showblogPostMutation(state,data){
-  //         return state.blogPost = data
-  //     },
-  //     getSinglePostMutation(state,payload){
-  //         return state.singlePost = payload
-  //     },
-  //     sidebarCategoryMutation(state,payload){
-  //         return state.sidebarCategory = payload
-  //     },
-  //     latestMutation(state,payload){
-  //         return state.latestPost = payload
-  //     },
-  //     allpostbyCategoryId_Mutation(state,payload){
-  //         return state.blogPost=payload
-  //     },
-  //     Search_Mutation(state,payload){
-  //         return state.blogPost=payload
-  //     }
-  //
-  // }
-
+  }
 });
 
 /***/ }),

@@ -49,6 +49,7 @@ Route::get('/delete/{id}','BookController@destroy');
 
 //borrrow
 Route::get('/getMyborrow','BorrowController@index');
+Route::get('/getMyborrow_date_return','BorrowController@date_return');
 Route::post('/create','BorrowController@store');
 Route::get('/getborrowInfo/{id}','BorrowController@edit');
 Route::post('/update/{id}','BorrowController@update');

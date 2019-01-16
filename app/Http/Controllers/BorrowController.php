@@ -18,6 +18,13 @@ class BorrowController extends Controller
 
         ],200);
     }
+    public function date_return(){
+        $borrows = Borrow::where('date_return',null)->get();
+        return response()->json([
+            'result'=>$borrows,
+
+        ],200);
+    }
     public function store(Request $request){
         $this->validate($request,[
            'book_id'=>'required',
